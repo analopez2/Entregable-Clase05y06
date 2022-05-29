@@ -12,18 +12,14 @@ const server = app.listen(PORT, () => {
 server.on('error', (error) => console.log(`Error en servidor ${error}`));
 
 // RUTAS
-app.get('/productos', (req, res) => {
-  (async () => {
-    let data = await newArchivo.getAll();
-    res.send(data);
-  })();
+app.get('/productos', async (req, res) => {
+  let data = await newArchivo.getAll();
+  res.send(data);
 });
 
-app.get('/productoRandom', (req, res) => {
-  (async () => {
-    let data = await newArchivo.getAll();
-    let idRandom = Math.floor(Math.random() * data.length + 1);
-    let product = await newArchivo.getById(idRandom);
-    res.send(product);
-  })();
+app.get('/productoRandom', async (req, res) => {
+  let data = await newArchivo.getAll();
+  let indexRandom = Math.round(Math.random() * data.length + 1);
+  let product = data[indexRandom];
+  res.send(product);
 });
