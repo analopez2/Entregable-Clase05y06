@@ -63,17 +63,27 @@ async function getById() {
 //#endregion
 
 //#region deleteById
-// newArchivo
-//   .deleteById(1)
-//   .then(console.log(console.log('Product deleted successfully')));
+async function deleteById() {
+  await newArchivo.deleteById(1);
+  console.log('Product deleted successfully');
+}
+// deleteById();
 //#endregion
 
 //#region deleteAll
-// newArchivo.deleteAll().then(console.log('Products deleted successfully'));
+async function deleteAll() {
+  await newArchivo.deleteAll();
+  console.log('Products deleted successfully');
+}
+// deleteAll();
 //#endregion
 
 //#region deleteFile
-// newArchivo.deleteFile().then(console.log('File deleted successfully'));
+async function deleteFile() {
+  await newArchivo.deleteFile();
+  console.log('File deleted successfully');
+}
+// deleteFile();
 //#endregion
 
 //#endregion
